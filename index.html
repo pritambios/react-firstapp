@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <title>First react app</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="./react/build/react.js"></script>
+    <script src="./react/build/react-dom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <link rel="stylesheet" href="css/style.css"> 
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+      var Navbar = React.createClass({
+        render: function() {
+          return (
+            <nav className="navbar navbar-default">
+              <div className="container-fluid">
+                <div className="navbar-header">
+                  <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span className="sr-only">Toggle navigation</span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                  </button>
+                  <a className="navbar-brand" href="#">ReactApp</a>
+                </div>
+
+                <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul className="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li className="dropdown">
+                      <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos <span className="caret"></span></a>
+                      <ul className="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" className="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" className="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  
+                  <ul className="nav navbar-nav navbar-right">
+                    <li><a href="#">Login</a></li>
+                    <li className="dropdown">
+                      <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span className="caret"></span></a>
+                      <ul className="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" className="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          );
+        }
+      });
+
+      var Jumbotron = React.createClass({
+        render: function() {
+          return (
+            <div className="jumbotron">
+              <div className="container">
+                <h1>Welcome to ReactApp</h1>
+                <p>This ReactApp project is under construction...</p>
+                <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+              </div>
+            </div>
+          );
+        }
+      });
+
+
+      var Content = React.createClass({
+        render: function() {
+          return (
+            <div className="container">
+              <p>Content of the webpage</p>
+            </div>
+          );
+        }
+      });
+
+      var Footer = React.createClass({
+        render: function() {
+          return (
+            <footer className="footer">
+              <div className="container">
+                <p className="text-muted">Place sticky footer content here.</p>
+              </div>
+            </footer>
+          );
+        }
+      });
+
+      var App = React.createClass({
+        render: function() {
+          return (
+            <div>
+              <Navbar />
+              <Jumbotron />
+              <Content />
+              <Footer />
+            </div>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <App />,
+        document.getElementById('app')
+      );
+    </script>
+    
+  </body>
+</html>
